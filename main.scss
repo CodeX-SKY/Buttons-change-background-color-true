@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+@mixin bg(){
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    // animation: bg 3s linear;
+}
+@mixin bg1(){
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    // animation: bg 3s linear;
+}
+@mixin bg2(){
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    // animation: bg 3s linear;
+}
+@mixin bg3(){
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient( 109.6deg,  rgba(45,116,213,1) 11.2%, rgba(121,137,212,1) 91.2% );
+    // animation: bg 3s linear;
+}
+@mixin bg4(){
+    width: 100%;
+    height: 100vh;
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    // animation: bg 3s linear;
+}
+$cl1: #333333;
+$cl2: #0073dd;
+
+
+.all {
+    @include bg();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    column-gap: 40px;
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 20px;
+        row-gap: 20px;
+        transition: all 0.3s linear;
+        background-color: grey;
+        padding: 40px;
+        border-radius: 20px;
+        filter: drop-shadow(0 0 5px white);
+        &-click {
+            width: 60px;
+            height: 30px;
+            border-radius: 30px;
+            background-color: $cl1;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            cursor: pointer;
+            padding: 0 5px;
+        }
+        &-on-off {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: white;
+            cursor: pointer;
+        }
+        &-click-change {
+            justify-content: end;
+            background-color: $cl2;
+            // animation: sss 0.3s linear;
+        }
+    }
+}
+
+
+// JavaScript
+.btn-bg-change {
+    @include bg1();
+}
+.btn-bg-change2 {
+    @include bg2();
+}
+.btn-bg-change3 {
+    @include bg3();
+}
+.btn-bg-change4 {
+    @include bg4()
+}
+// JavaScript
+
+
+// Animation
+// @keyframes bg {
+//     0% {
+//         background-color: black;
+//         justify-content: end;
+//         background-color: $cl2;
+//         Not Work
+//     }
+// }
+// @keyframes sss {
+//     0% {
+//         justify-content: end;
+//         background-color: $cl2;
+//         Not Work
+//     }
+// }
+// Animation
+
+
+@media(max-width:650px){
+    .all {
+        flex-direction: column;
+        row-gap: 40px;
+        .btn {
+            padding: 20px;
+            border-radius: 10px;
+            &-click {
+                width: 40px;
+                height: 20px;
+            }
+            &-on-off {
+                width: 12px;
+                height: 12px;
+            }
+        }
+    }
+}
